@@ -1,0 +1,72 @@
+.contact{
+
+	$contact-map-size: 50%;
+
+	@extend .card;
+	@extend .card-z3;
+	@include outer-container;
+	top: $base-spacing * 2;
+	display: block;
+	position: relative;
+	margin-bottom: $base-spacing * 4;
+
+	&-wrapper{
+		position: relative;
+		padding-right: $contact-map-size;
+	}
+
+	&-content{
+		padding: $base-spacing;
+	}
+
+	&-map{
+		top: 0;
+		left: 100% - $contact-map-size;
+		width: $contact-map-size;
+		height: 100%;
+		padding: $base-spacing / 2;
+		position: absolute;
+
+		#map{
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	.vcard{
+		font-size: 0.85em;
+		
+		p{
+			margin-bottom: $small-spacing / 3;
+		}
+
+		.tel, .fax{
+			&:before{
+				font-weight: bold;
+			}
+		}
+
+		.tel:before{
+			content: 'Phone: ';
+		}
+		.fax:before{
+			content: 'Fax: '
+		}
+	}
+
+	h1, h2{
+		@extend .h3;
+	}
+
+	h2{
+		margin-top: $small-spacing;
+	}
+
+	.row{
+
+		@include outer-container;
+		.input-container{
+			@include span-columns(2 of 4);
+		}
+	}
+}

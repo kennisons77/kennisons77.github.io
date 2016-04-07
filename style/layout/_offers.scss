@@ -1,0 +1,206 @@
+.offers{
+
+	.search{
+		margin: $small-spacing 0;
+		display: block;
+		overflow: auto;
+
+		&-container{
+	    width: 100%;
+	    display: inline-block;
+	    padding: $small-spacing;
+			background: darken($saveup-blue, 5%);
+	    vertical-align: top;
+
+	    h1{
+	    	@extend .h3;
+	    	text-align: center;
+	    }
+		}
+
+		&-text{
+			display: none;
+		}
+
+		&-bar{
+			display: block;
+			background: white;
+			font-weight: normal;
+			border-radius: $base-border-radius / 2;
+			margin-bottom: 0;
+			padding: .24em .4em;
+
+			> *{
+				vertical-align: bottom;
+			}
+
+			.icon{
+				fill: $dark-grey-font-color;
+			}
+		}
+
+		#categories{
+			.modal-container{
+
+				overflow: visible;
+			}
+		}
+
+		.category-types{
+			div{
+				display: inline-block;
+				margin-right: $small-spacing;
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	.location{
+
+		&-results{
+			display: block;
+			padding: $small-spacing / 2;
+			position: relative;
+			font-size: 0.9em;
+			border-bottom: $base-border;
+
+			> *{
+				vertical-align: middle;
+			}
+
+			&:first-child{
+				border-top: $base-border;
+			}
+
+			svg{
+				fill: $dark-grey-font-color;
+				margin-right: $small-spacing / 2;
+			}
+
+			&.selected{
+				background: $light-gray;
+				svg{
+					fill: $action-color;
+				}
+			}
+		}
+	}
+
+	.featured{
+
+		margin: $small-spacing;
+
+		&-container{
+			@include outer-container;
+		}
+
+		&-logo{
+			height: 8em;
+			position: relative;
+			max-width: 70%;
+			margin-top: 1em;
+			max-height: 8em;
+		}
+
+		&-heart{
+			@include transform(translateX(-100%));
+			@include size($small-icon-size + 0.5em);
+			@extend .icon;
+			top: 3%;
+			left: 97%;
+			padding: 0.5em;
+			position: absolute;
+			font-size: 1.3em;
+			background: $light-gray;
+			border-radius: 50%;
+		}
+
+		&-header{
+			padding: $small-spacing;
+			position: relative;
+			background: white;
+
+			h2{
+				color: $light-grey-font-color;
+				font-size: 0.8em;
+			}
+		}
+
+		.applebee{
+			background-image: url('/img/dotcom/applebee.jpg');
+		}
+
+		&-tile{
+			@extend .card-z4;
+			display: block;
+			position: relative;
+			text-align: center;
+		    background-size: cover;
+			background-color: white;
+			background-repeat: no-repeat;
+			background-position: center center;
+			margin-bottom: .9em;
+
+
+			&:before{
+				width: 100%;
+				height: 100%;
+				content: ' ';
+				background: rgba(white, 0.5);
+			}
+
+			&:after, &:before{
+				top: 0;
+				left: 0;
+				position: absolute;
+			}
+
+			&:after{
+				top: 10px;
+				color: white;
+				content: 'Featured';
+				padding: $small-spacing / 2 $small-spacing;
+				background: transparentize($saveup-blue, 0.1);
+				font-weight: bold;
+				font-size: 0.9em;
+			}
+		}
+	}
+
+// Desktop Layout
+  @include media($large-screen) {
+
+    .search{
+
+    	margin: $base-spacing 0;
+
+    	> label{
+    		padding: $small-spacing / 2;
+    		font-size: 1.5em;
+    	}
+
+    	&-text{
+    		color: white;
+    		display: block;
+    	}
+
+    	&-wrapper{
+    		@include outer-container;
+    	}
+
+    	&-text, &-inputs{
+    		@include flex-columns(6, inline-block);
+    		vertical-align: middle;
+    		padding: $base-spacing;
+    	}
+    }
+
+    .featured{
+			&-tile{
+				width: 30%;
+				margin: 0 1.6%;
+				display: inline-block;
+			}
+		}
+  }
+}

@@ -1,0 +1,208 @@
+.style-guide{
+
+	$separator-color: $base-border-color;
+	$corner-radius: 5px;
+
+	// Sidebar
+	&-sidebar{
+		@include span-columns(3);
+
+		&-top{
+
+			@include transform(translate(-100%, -100%));
+			top: 95%; 
+			left: 95%;
+			position: fixed;
+
+			svg{
+				fill: white;
+			}
+		}
+	}
+
+	.components{
+		@include span-columns(9);
+	}
+
+	// Basic Guide Style
+	.component{
+
+		& > h1{
+			font-size: 2em;
+			border-bottom: 1px solid $separator-color;
+		}
+
+		&-type{
+			& > h1{
+				font-size: 1.5em;
+			}
+		}
+
+		&-type{
+
+			margin-bottom: 1.5em;
+		}
+	}
+
+	.example{
+
+		border: 1px solid $separator-color;
+		border-radius: $corner-radius;
+
+		&-center{
+			text-align: center;
+		}
+
+		&-half-dark{
+			background: linear-gradient(90deg, white 50%, $dark-bg 50%);
+		}
+
+		&-result{
+			padding: 3em 1em 1em 1em;
+			position: relative;
+
+			&::before{
+				top: 1em;
+				left: 1em;
+				content: "example";
+				position: absolute;
+				font-weight: bold;
+				text-transform: capitalize;
+			}
+		}
+	}
+
+	pre{
+    margin: 0;
+    overflow: hidden;
+    border-top: 1px solid $separator-color;
+		line-height: 0;
+
+		code{
+			line-height: 1.5em;
+		}
+	}
+
+	p code{
+		background: #F0F0F0;
+		padding: 0 0.5em;
+		display: inline-block;
+	}
+
+	.inline-code{
+		border-top: none;
+		display: inline-block;
+	}
+
+	.note{
+		margin: 0.5em;
+		padding: 1em;
+		background: #AEBDC5;
+		border-radius: 0.2em;
+	}
+
+	main{
+
+		@include outer-container;
+		@include pad(2em 1em);
+	}
+
+	// Icon Example
+	.icons{
+
+		text-align: center;
+
+		.icon{
+
+			&-sample{
+				margin: 1em 2%;
+				display: inline-block;
+				padding: 2.5em;
+				position: relative;
+				text-align: center;
+				vertical-align: top;
+			}
+
+			&-source{
+				fill: black;
+				width: 5em;
+				height: 5em;
+			}
+
+			&-text{
+				width: 100%;
+				font-size: 0.8em;
+				position: absolute;
+				left: 0;
+			}
+		}
+	}
+
+	// Button Example
+
+	#wireframe-button{
+		.button-wireframe{
+			float: right;
+		}
+	}
+
+	// Card Example
+	.elevation-example{
+
+		.example-result{
+			text-align: center;
+		}
+
+		.card{
+			margin: 2em;
+			text-align: center;
+			padding: 1em 2em;
+		}
+	}
+
+	// Tooltip Example
+	.tooltip-example{
+
+		.card{
+
+			@extend %tooltip;
+		}
+	}
+
+	//Chart Example
+
+	#basic-doughnut{
+		width: 20em;
+		height: 15em;
+	}
+
+	#basic-line{
+		width: 50%;
+	}
+
+	// Colors
+
+	.color{
+
+		$colors: ( 
+		  ("blue", $saveup-blue), 
+		  ("dark-blue", $dark-bg),
+		  ("pink", $action-color)
+		);
+
+		&-tile{
+			padding: 1em 2em;
+		}
+
+		@each $class-name, $color in $colors {
+			&-#{$class-name} {
+				background: $color;
+
+				&:after{
+					color: white;
+					content: quote(inspect($color));
+				}
+			}
+		}
+	}
+}

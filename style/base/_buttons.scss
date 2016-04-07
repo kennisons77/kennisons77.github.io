@@ -1,0 +1,138 @@
+// #{$all-buttons}
+$wireframe-hover-bg-color: rgba(0, 0, 0, 0.3);
+$wireframe-light-hover-bg-color: $lightest-gray;
+$wireframe-light-color: $light-grey-font-color;
+
+.button{
+  color: #fff;
+  border: 0;
+  margin: 1em 0.5em;
+  cursor: pointer;
+  border: 2px solid $action-color;
+  display: inline-block;
+  padding: $small-spacing $base-spacing + 0.5em;
+  font-size: $base-font-size;
+  appearance: none;
+  transition: all $base-duration $base-timing;
+  font-family: $base-font-family;
+  font-weight: bold;
+  line-height: 1;
+  user-select: none;
+  white-space: nowrap;
+  border-radius: $base-border-radius / 2;
+  vertical-align: middle;
+  text-decoration: none;
+  background-color: $action-color;
+  -webkit-font-smoothing: antialiased;
+
+  &.full{
+    width: 100%;
+    display: block;
+    position: relative;
+    margin-left: 0;
+    text-align: center;
+    margin-right: 0;
+
+    svg{
+      top: 50%;
+      left: 0;
+      position: absolute;
+      margin-top: - $small-icon-size / 2;
+      margin-left: $small-spacing;
+    }
+
+    &:first-child{
+      margin-top: 0 !important;
+    }
+
+    &:last-child{
+      margin-bottom: 0 !important;
+    }
+  }
+
+  &.compact{
+    margin-top: $small-spacing / 2;
+    margin-bottom: $small-spacing / 2;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: shade($action-color, 16%);
+    border: 2px solid shade($action-color, 16%);
+    color: #fff;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+    border-color: $medium-gray;
+    background-color: $medium-gray;
+  }
+
+  // Svg icon capability inside the button tag
+
+  svg{
+    @extend .icon;
+
+    // Ensure correct alignment
+    position: relative;
+    top: -0.1em;
+  }
+
+  // Add Wireframe variation class
+
+  &-wireframe{
+    
+    @extend .button;
+    background: none;
+    border-color: white;
+
+    &:hover,
+    &:focus {
+      background-color: $wireframe-hover-bg-color;
+      border: 2px solid white;
+    }
+
+    &-ligth{
+      
+      @extend .button;
+      color: $wireframe-light-color;
+      background: none;
+      border-color: $light-grey-font-color;
+
+      &:hover,
+      &:focus {
+        color: $dark-grey-font-color;
+        border: 2px solid  $dark-grey-font-color;
+        background-color: $wireframe-light-hover-bg-color;
+      }
+
+      svg{
+        fill: $dark-grey-font-color;
+      }
+    }
+  }
+
+  // Round
+
+  &-circle{
+    @extend .button;
+    @extend .card-z3;
+    padding: 1em;
+    border-radius: 50%;
+  }
+
+  // Button Sizes
+
+  &-sm{
+    font-size: 0.8em;
+  }
+
+  &-lg{
+    font-size: 1.5em;
+  }
+
+  &-xl{
+    font-size: 2em;
+  }
+}

@@ -1,0 +1,96 @@
+.box{
+	@extend .card;
+	@extend .card-z3;
+	margin: $small-spacing;
+	display: block;
+  position: relative;
+
+	&-header{
+		position: relative;
+	}
+
+	&-content{
+		padding: $small-spacing;
+
+		h1{
+			margin: 0;
+			font-size: 0.9em;
+		}
+
+		span, p{
+			margin: 0;
+			font-size: 0.8em;
+		}
+	}
+
+	&-list{
+
+		.box{
+
+			& > *{
+				vertical-align: middle;
+			}
+
+			&-header{
+				@include flex-columns(4, inline-block);
+			}
+
+			&-content{
+				@include flex-columns(8, inline-block);
+			}
+		}
+	}
+
+  &-overlay{
+    @include size(100%);
+    top: 0;
+    left: 0;
+    content: "";
+    position: absolute;
+    background: transparentize(black, 0.2);
+
+    &-content{
+
+      @include transform(translate(-50%, -50%));
+      top: 50%;
+      left: 50%;
+      width: 90%;
+      color: white;
+      padding: 0;
+      position: absolute;
+      text-align: center;
+
+      h2{
+        font-size: 0.9em;
+      }
+
+      h3{
+        font-size: 0.8em;
+      }
+
+      p{
+        font-size: 0.7em;
+        margin-bottom: 0;
+      }
+
+      button{
+        margin-bottom: 0;
+      }
+    }
+  }
+
+	// Desktop Layout
+  @include media($large-screen) {
+
+  	&-list{
+
+  		.box{
+
+  			& > *{
+  				display: block;
+  				width: 100%;
+  			}
+  		}
+  	}
+  }
+}

@@ -1,0 +1,102 @@
+.footer {
+  $footer-background: lighten($saveup-blue, 1%) !default;
+  $footer-color: white !default;
+  $footer-disclaimer-color: transparentize($footer-color, 0.6) !default;
+
+  background: $footer-background;
+  padding: ($base-spacing * 2) $gutter;
+  width: 100%;
+  background-image: url('/img/bg.png');
+
+  > h1{
+    color: white;
+    display: none;
+    font-size: 2em;
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+
+  &-toolbar{
+    margin: 2em 0 4em 0;
+    display: none;
+    text-align: center;
+  }
+
+  .footer-links {
+    color: $footer-color;
+    margin: 0 auto;
+    margin-bottom: $base-spacing;
+    @include outer-container;
+
+    ul {
+      @include span-columns(4);
+      padding: 0;
+    }
+
+    li {
+      &:first-child{
+        display: block;
+        font-size: 1em;
+      }
+      display: none;
+      text-align: center;
+      line-height: 1.5em;
+    }
+
+    li a {
+      color: $footer-color;
+      text-decoration: none;
+
+      &:focus,
+      &:hover {
+        color: transparentize($footer-color, 0);
+      }
+    }
+  }
+
+  img{
+    margin: 0.5em 0.5em;
+  }
+
+  hr {
+    display: none;
+    border: 1px solid white;
+    margin: 0 auto $base-spacing;
+    width: 50%;
+  }
+
+  p {
+    color: $footer-color;
+    margin: auto;
+    max-width: 35em;
+    margin-top: $base-spacing * 2;
+    text-align: center;
+    line-height: 1.5em;
+  }
+
+// Desktop Layout
+  @include media($large-screen) {
+
+    h1, &-toolbar, hr{
+      display: block;
+    }
+
+    li h3 {
+      font-size: 1.2em;
+      margin-bottom: 0.4em;
+    }
+
+    .footer-links {
+      width: 50%;
+      ul {
+        @include span-columns(4);
+        margin-bottom: $base-spacing * 2;
+      }
+
+      li{
+        display: block;
+      }
+    }
+  }
+}

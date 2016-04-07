@@ -1,0 +1,38 @@
+.social{
+
+	$social-icon-size: 2.5em !default;
+	$social-network-color: ( 
+    ("facebook", rgb(59, 89, 152)), 
+    ("twitter", rgb(85, 172, 238)),
+    ("pinterest", rgb(189, 8, 28))
+  ) !default;
+  $social-icon-padding: $small-spacing / 2 !default;
+  $social-icon-border-width: 2px !default;
+  $social-icon-margin: $small-spacing !default;
+
+  display: block;
+  text-align: center;
+
+  @each $network, $color in $social-network-color {
+    .#{$network}:hover {
+      fill: $color;
+      border-color: $color;
+    }
+  }
+
+  &-icon{
+
+  	svg{
+  		@include size($social-icon-size);
+  		@include transition (all $base-duration / 2);
+  		@extend .icon;
+	  	padding: $social-icon-padding;
+	  	border-radius: 50%;
+	  	border: $social-icon-border-width solid white;
+	  	margin: 0 $social-icon-margin;
+  	}
+  	
+  	display: inline-block;
+  }
+
+}

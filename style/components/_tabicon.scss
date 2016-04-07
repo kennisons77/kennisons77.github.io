@@ -1,0 +1,178 @@
+.tabicons{
+
+	$tabicon-size: $base-icon-size * 2 !default;
+  $tabicon-padding: $base-spacing !default;
+
+  $tabicon-dark-bg-color: $dark-bg !default;
+  $tabicon-dark-bg-text: $saveup-blue !default;
+  $tabicon-dark-focus-color: $action-color !default;
+  $tabicon-dark-focus-text-color: white !default;
+  $tabicon-dark-triangle-size: $base-icon-size !default;
+
+  $tabicon-ligth-icon-color: $saveup-blue !default;
+  $tabicon-ligth-border-color: $saveup-blue !default;
+  $tabicon-ligth-focus-color: $action-color !default;
+
+  @include outer-container(100%);
+
+  .tabicon{
+    @include flex-columns(3);
+    cursor: pointer;
+    font-size: 0.9em;
+    text-align: center;
+    transition: all $base-duration $base-timing;
+
+  	&-text{
+      transition: inherit;
+  	}
+
+    &-icon{
+      @extend .icon;
+      transition: inherit;
+    }
+  }
+
+  &-ligth{
+
+    .tabicon{
+
+      &-icon{
+        @include size($tabicon-size);
+        fill: $tabicon-ligth-icon-color;
+        border: 0.25em solid $tabicon-ligth-border-color;
+        padding: $tabicon-padding / 2;
+        background: lighten($tabicon-ligth-icon-color, 55%);
+        border-radius: $tabicon-size;
+      }
+
+      &-text{
+
+        @include media($large-screen) {
+            padding-top: 0.8em;
+        }
+        
+        width: 100%;
+        display: block;
+        font-size: 1.2em;
+        text-align: center;
+        /*padding-top: $tabicon-padding;*/
+        padding-top: 0.5em;
+        color: $saveup-blue;
+      }
+
+      &-arrow-down{
+        top: -10px;
+        fill: $saveup-blue;
+        width: 3em;
+        margin: 0 auto;
+        opacity: 0;
+        display: block;
+        position: relative;
+        transition: inherit;
+      }
+
+      @include media($small-screen) {
+        font-size: 0.65em;
+
+        .tabicon-text{
+          font-size: 1.5em;
+        }
+      }
+
+      &:hover, &.current{
+
+        .tabicon-icon{
+          fill: $tabicon-ligth-focus-color;
+          border-color: $tabicon-ligth-focus-color;
+          background: lighten($tabicon-ligth-focus-color, 42%);
+        }
+
+        .tabicon-text{
+          color: $tabicon-ligth-focus-color;
+        }
+
+        .tabicon-arrow-down{
+          top: 0;
+          fill: $tabicon-ligth-focus-color;
+          opacity: 1;
+          position: relative;
+        }
+      }
+    }
+  }
+
+  &-dark{
+
+    background: $tabicon-dark-bg-color;
+
+    .tabicon{
+      @include flex-columns(4);
+      padding: $tabicon-padding / 2;
+      position: relative;
+      overflow: hidden;
+      font-size: 0.8em;
+
+      &-icon{
+        @include size($tabicon-size * 0.35);
+        fill: $tabicon-dark-bg-text;
+        border: none;
+        margin: auto;
+        display: block;
+        padding: $tabicon-padding / 3.5;
+        background: transparent;
+        vertical-align: middle;
+      }
+
+      &-text{
+        color: $tabicon-dark-bg-text;
+        padding-top: 0;
+        font-weight: bold;
+        vertical-align: middle;
+        font-size: 1em;
+      }
+
+    // Desktop Layout
+      @include media($large-screen) {
+        
+        padding: $tabicon-padding * 1.5;
+
+        &-text{
+          font-size: 1.5em;
+        }
+
+        &-icon {
+          display: inline-block;
+          padding: 0;
+          margin-left: - $small-spacing;
+          margin-right: $small-spacing / 2;
+        }
+      }
+
+      &::before{
+        @include triangle($tabicon-dark-triangle-size, white, up);
+        transition: inherit;
+        top: 102%;
+        left: 50%;
+        content: " ";
+        position: absolute;
+        margin-left: - $tabicon-dark-triangle-size * 0.5;
+      }
+
+      &:hover, &.current{
+        background: darken($tabicon-dark-bg-color, 3%);
+        
+        .tabicon-text{
+          color: $tabicon-dark-focus-text-color;
+        }
+
+        .tabicon-icon{
+          fill: white;
+        }
+
+        &::before{
+          margin-top: - $tabicon-dark-triangle-size * 0.49;
+        }
+      }
+    }
+  }
+}

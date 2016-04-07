@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bourbon</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css"  media="screen">
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+</head>
+<body class="app accounts navigation-stick">
+	<header class="navigation" role="banner">
+    <a class="navigation-logo">
+      <img src="/img/sitelogo-original.svg" alt="Logo Image">
+    </a>
+		<input type="checkbox" id="menu-toggle" value="">
+    <label for="menu-toggle" class="navigation-button" id="js-mobile-menu">
+			<svg class="tabicon-icon" viewBox="0 0 48 48">
+				<use xlink:href="img/sprite.svg#icon-menu">
+			</svg>
+		</label>
+	 	<div class="navigation-wrapper">
+	    <nav class="navigation-links" role="navigation">
+				<div class="user">
+					<svg class="user-edit" viewBox="0 0 48 48">
+						<use xlink:href="img/sprite.svg#icon-edit">
+					</svg>
+					<div class="user-icon">
+						<svg viewBox="0 0 48 48">
+							<use xlink:href="img/sprite.svg#icon-account-circle">
+						</svg>
+					</div>
+					<h3 class="user-text">Gustavo Laguna</h3>
+					<span class="user-level">Level <span>2</span></span>
+				</div>
+	      <ul>
+	        <li class="navigation-link"><a>How It Works</a></li>
+	        <li class="navigation-link">
+	        	<a>Account</a>
+	        	<div class="sub-nav">
+	        		<ul>
+	        			<li>
+	        				<a>
+					        	<svg class="tabicon-icon" viewBox="0 0 48 48">
+					        		<use xlink:href="img/sprite.svg#icon-account-wallet">
+					        	</svg>
+					        	Spending
+				        	</a>
+	        			</li>
+	        			<li>
+	        				<a>
+					        	<svg class="tabicon-icon" viewBox="0 0 48 48">
+					        		<use xlink:href="img/sprite.svg#icon-account-balance">
+					        	</svg>
+					        	Savings
+				        	</a>
+	        			</li>
+	        			<li>
+	        				<a>
+					        	<svg class="tabicon-icon" viewBox="0 0 48 48">
+					        		<use xlink:href="img/sprite.svg#icon-trending-down">
+					        	</svg>
+					        	Debt
+				        	</a>
+	        			</li>
+	        			<li class="footer-link">
+	        				<a>
+					        	View all accounts in one place
+				        	</a>
+	        			</li>
+	        		</ul>
+	        	</div>
+	        </li>
+	        <li class="navigation-link"><a>Blog</a></li>
+	      </ul>
+			  <div class="navigation-footer">
+			  	<span title="credits" class="navigation-footer-credits">
+			  		15,000
+			  	</span><svg class="navigation-footer-exchange" viewBox="0 0 48 48">
+        		<use xlink:href="img/sprite.svg#icon-swap">
+        	</svg><span title="plays" class="navigation-footer-plays">
+			  		6
+			  	</span>
+		    </div>
+	    </nav>
+	  </div>
+	</header>
+	<main>
+    <div id="new-account"></div>
+	</main>
+	<footer class="footer" role="contentinfo">
+	  <h1>Download Our Free Mobile App</h1>
+	  <div class="footer-toolbar">
+	  	<a href="" title="App Store" class="button button-wireframe">App Store</a>
+	  	<a href="" title="Google Play" class="button button-wireframe">Google Play</a>
+	  </div>
+	  <hr>
+	  <div class="footer-links">
+	    <ul>
+	      <li><h3>Content</h3></li>
+	      <li><a>About</a></li>
+	      <li><a>Contact</a></li>
+	      <li><a>Products</a></li>
+	    </ul>
+	    <ul>
+	      <li><h3>Follow Us</h3></li>
+	      <li><a>Facebook</a></li>
+	      <li><a>Twitter</a></li>
+	      <li><a>YouTube</a></li>
+	    </ul>
+	    <ul>
+	      <li><h3>Legal</h3></li>
+	      <li><a>Terms and Conditions</a></li>
+	      <li><a>Privacy Policy</a></li>
+	    </ul>
+	  </div>
+	  <p>Disclaimer area lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, nostrum repudiandae saepe.</p>
+	</footer>
+	 <script src="/bower_components/jquery/dist/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/bower_components/react/react.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/bower_components/react/react-dom.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/bower_components/Chart.js/Chart.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/bower_components/lodash/dist/lodash.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/main.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

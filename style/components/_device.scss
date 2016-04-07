@@ -1,0 +1,77 @@
+.device-background {
+  $base-border-radius: 3px !default;
+  $action-color: #477DCA !default;
+  $large-screen: em(860) !default;
+  $device-padding: 3.5em 3.6em 0 5.9em !default;
+  $device-screen-width: 20em !default;
+  $device-screen-height: 25em !default;
+  $device-text-color: rgb(54, 68, 63) !default;
+
+  width: 100%;
+
+  .device-text {
+    padding: 2em;
+
+    @include media($large-screen) {
+      float: right;
+      max-width: 60%;
+      padding: 4em;
+    }
+
+    h4 {
+      font-weight: bold;
+      color: $device-text-color;
+      font-size: 1.3em;
+      margin: 0 0 0.5em 0;
+      padding-bottom: 0.5em;
+    }
+
+    p {
+      color: $device-text-color;
+      line-height: 1.5em;
+      margin-bottom: 1.5em;
+    }
+  }
+
+  .device {
+
+    display: none;
+
+    @include media($large-screen) {
+      @include size($device-screen-width $device-screen-height);
+      display: inline-block;
+      padding: $device-padding;
+      margin-top: -2em;
+      margin-left: 2em;
+      background: url('/img/dotcom/dotcom_landing_howItWorks_iphone.png') no-repeat center center;
+      background-size: cover;
+      vertical-align: middle;
+    }
+
+    .screen{
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    img{
+      left: 1.5px;
+      width: 100%;
+      height: auto;
+      position: relative;
+
+      // Stack the image
+      margin-right: -100%;
+      vertical-align: middle;
+      transition: all 300ms $base-timing;
+
+      &.in{
+        left: 101%;
+      }
+
+      &.out{
+        left: -101%;
+      }
+    }
+  }
+}

@@ -1,0 +1,274 @@
+.jackpot{
+
+	position: relative;
+	text-align: left;
+
+	&-text{
+		color: white;
+		padding: $small-spacing;
+		background: $saveup-blue;
+		p{
+			font-size: 0.8em;
+		}
+	}
+
+	&-time{
+		display: block;
+		font-size: 1.2em;
+		margin-top: $small-spacing;
+	}
+
+	&-header{
+		@include outer-container;
+		color: white;
+		padding: $small-spacing $base-spacing;
+		background: darken($saveup-blue, 5%);
+
+		&.sticky{
+			top: $navigation-mobile-height;
+			width: 100%;
+			z-index: 10;
+			position: fixed;
+		}
+
+		&-selection{
+			@include fill-parent;
+		}
+
+		.jackpot-number{
+
+			&:before{
+				box-shadow:
+					0px 2px 2px transparentize(white, 0.5),
+					inset 0px 2px 2px transparentize(black, 0.5);
+			}
+		}
+
+		h1{
+			@extend .h3;
+			margin: 0;
+			display: none;
+		}
+	}
+
+	&-number{
+		@extend .aspect-1;
+		width: 14%;
+		color: white;
+		margin: 1.3%;
+		cursor: pointer;
+		display: inline-block;
+		position: relative;
+		line-height: 1em;
+		vertical-align: top;
+
+		&:before{
+			position: relative;
+			border-radius: 50%;
+			background: $dark-bg;
+			vertical-align: middle;
+		}
+
+		&:after{
+			@extend .middle;
+			content: attr(data-number);
+		}
+
+		&.active{
+			color: white;
+
+			&:before{
+				background: $action-color !important;
+			}
+		}
+
+		&-container{
+			width: 100%;
+			text-align: center;
+		}
+	}
+
+	&-toolbar{
+		padding: $base-spacing;
+		background: $saveup-blue;
+	}
+
+	&-container{
+		@include outer-container;
+		text-align: center;
+	}
+
+	&-selection{
+		text-align: left;
+
+		> * {
+			color: $dark-grey-font-color;
+			width: 15%;
+			margin: 0.8%;
+			vertical-align: bottom;
+
+			&:before{
+				background: white;
+			}
+
+			&:hover{
+
+				&:before{
+					background: lighten(grey, 35%);
+				}
+			}
+		}
+
+		h2{
+			width: auto;
+			padding: $small-spacing;
+			text-align: center;
+		}
+	}
+
+  &-picks{
+  	@extend .card;
+  	@extend .card-z4;
+  	margin: $small-spacing;
+  	padding: $small-spacing;
+  	display: block;
+
+  	h1{
+  		text-align: left;
+  		border-bottom: $base-border;
+  		padding-bottom: $small-spacing / 2;
+  	}
+
+  	time{
+			@include flex-columns(4, inline-block);
+			vertical-align: middle;
+			text-align-last: left;
+  	}
+
+  	&-selection{
+  		@include flex-columns(8, inline-block);
+  		vertical-align: middle;
+  	}
+
+  	.jackpot-number{
+  		width: 12%;
+  		margin: 2.3%;
+  		font-size: 0.9em;
+
+  		&:before{
+  			background: $action-color;
+  		}
+  	}
+  }
+
+  &-rules{
+  	@extend .card;
+  	@extend .card-z4;
+  	margin: $small-spacing;
+  	padding: $small-spacing;
+  	display: block;
+
+  	table{
+  		margin: 0;
+  	}
+
+  	tbody{
+  		td{
+  			border-bottom: none;
+  		}
+  	}
+
+  	th, td{
+  		text-align: right;
+
+  		&:first-child{
+  			text-align: left;
+  		}
+  	}
+  }
+
+// Desktop Layout
+  @include media($large-screen) {
+
+  	&-header{
+  		background: $saveup-blue;
+  		position: static !important;
+
+  		&-placeholder{
+  			display: none !important;
+  		}
+
+  		&:after{
+  			height: 8.5em;
+		    content: " ";
+		    vertical-align: middle;
+		    display: inline-block;
+  		}
+
+  		&-selection{
+  			@include flex-columns(9, inline-block);
+  			vertical-align: middle;
+  		}
+  	}
+
+  	h1{
+  		@include flex-columns(3, inline-block);
+			vertical-align: middle;
+			text-align: center;
+  	}
+
+  	&-number-container{
+  		@include flex-columns(9, inline-block);
+			padding: 0 $base-spacing / 2;
+			font-size: 1.6em;
+			vertical-align: middle;
+  	}
+
+		&-selection{
+			padding: $base-spacing 0;
+			> * {
+				width: 5.8%;
+				margin: 0.4%;
+			}
+
+			h2{
+				display: none;
+			}
+		}
+
+		&-text{
+			background: transparent;
+			color: inherit;
+
+			h1{
+				font-size: 1.3em;
+			}
+
+			p{
+				font-size: 1em;
+			}
+		}
+
+		&-toolbar{
+			@include flex-columns(3, inline-block);
+			@include transform(translateX(-100%));
+			top: 0;
+			left: 100%;
+			position: absolute;
+			padding-left: $base-spacing;
+			vertical-align: middle;
+		}
+
+		&-time{
+			display: inline-block;
+			font-size: 1em;
+			margin-top: 0;
+		}
+
+		&-picks, &-rules{
+			margin: $base-spacing 0;
+			@include span-columns(6);
+			margin-top: 0;
+		}
+  }
+}

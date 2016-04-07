@@ -1,0 +1,105 @@
+.hero {  
+  $base-border-radius: 3px !default;
+  $action-color: #477DCA !default;
+  $large-screen: em(860) !default;
+  $hero-background-top: #7F99BE !default;
+  $hero-background-bottom: #20392B !default;
+  $hero-color: white !default;
+  $gradient-angle: 10deg !default;
+  $hero-footer-size: 4em !default;
+  $hero-image: '/img/dotcom/dotcom_landing_main_banner.jpg' !default;
+
+  @include background(url($hero-image), linear-gradient($gradient-angle, $hero-background-bottom, $hero-background-top), no-repeat $hero-background-top scroll);
+  position: relative;
+  padding-top: 2em;
+  padding-bottom: 1em;
+  background-size: cover;
+  background-color: #324766;
+  background-repeat: no-repeat;
+  background-position: top;
+
+          @include media($large-screen) {
+            padding-top: 6em;
+            padding-bottom: 3em;
+          }
+
+  &-footer{
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 3em;
+    position: absolute;
+    font-size: 1.3em;
+    text-align: center;
+    margin-top: -3em;
+    background-color: transparentize(desaturate(darken($saveup-blue, 25%), 20%), 0.1);
+
+      @include media($large-screen) {
+        height: $hero-footer-size;
+        margin-top: -$hero-footer-size;
+      }
+
+    h2{
+      color: white;
+      font-size: .75em;
+      line-height: $hero-footer-size;
+
+      @include media($large-screen) {
+        font-size: 1em;
+      }
+
+    }
+  }
+
+  .hero-logo img {
+    height: 4em;
+    margin-bottom: 1em;
+  }
+
+  .hero-inner {
+    @include outer-container;
+    @include clearfix;
+    margin: auto;
+    padding: 0.5em;
+    text-align: center;
+
+    .hero-copy {
+      text-align: center;
+      
+      h1 {
+        color: $hero-color;
+        font-size: 1.8em;
+        max-width: 90%;
+        margin: 0 auto 0.5em auto;
+
+        @include media($large-screen) {
+          font-size: 2.9em;
+          max-width: 75%;
+        }
+      }
+
+      p {
+        color: $hero-color;
+        line-height: 1.4em;
+        margin: 0 auto 1.1em auto; 
+
+        @include media($small-screen) {
+          display:none;
+        }
+
+        @include media($large-screen) { 
+          display:normal;
+          font-size: 1.3em;
+          max-width: 80%;
+        }
+      }
+
+      .hero-toolbar a.button-wireframe {
+        @include media($small-screen) {
+          display:none;
+        }
+
+      }
+    }
+  }
+}

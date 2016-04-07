@@ -1,0 +1,95 @@
+.modal{
+	top: 0;
+	left: 0;
+	width: 100%;
+    height: 100%;
+	display: block;
+	z-index: 1000000;
+	position: fixed;
+  background: transparent;
+
+	&-container{
+		width: 100%;
+		/*padding: $small-spacing;*/
+		padding: 1.1em;
+		display: inline-block;
+		overflow: visible;
+		max-height: 80%;
+		background: white;
+		border-radius: 0 0 3px 3px;
+	}
+
+	&-icon{
+
+		float: right;
+		height: $navigation-mobile-height;
+		padding: 0 $small-spacing;
+		margin-left: - ($small-icon-size + $small-spacing * 2);
+
+		> svg{
+			height: 100%;
+		}
+
+		&:after{
+			top: -1000%;
+	    left: -1000%;
+	    width: 10000%;
+	    height: 10000%;
+			content: ' ';
+			z-index: -1;
+			position: fixed;
+			background: transparentize(black, 0.2);
+		}
+	}
+
+	&-header{
+		color: white;
+		display: block;
+		text-align: center;
+		background: $saveup-blue;
+		line-height: $navigation-mobile-height;
+		font-weight: bold;
+	}
+
+	&-input{
+
+		@extend %visuallyhidden;
+
+		& + div.search-box{
+			display: none;
+		}
+
+		&:checked{
+			& + div{
+				display: block;
+			}
+
+			& ~ label{
+
+				&:after{
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					content: ' ';
+					z-index: 100;
+					position: fixed;
+					background: transparentize(black, 0.5);
+				}
+			}
+		}
+	}
+
+// Desktop Layout
+  @include media($large-screen) {
+  	top: 50%;
+  	left: 50%;
+  	max-width: 550px;
+  	height: auto;
+  	@include transform(translate(-50%, -50%));
+
+  	&-container{
+		padding: 3.3em;
+	}
+  }
+}

@@ -1,0 +1,95 @@
+.document{
+
+	main{
+
+		@include outer-container;
+
+		.sidebar{
+			@include span-columns(3);
+
+			ul li a{
+				color: rgb(60, 64, 66);
+			}
+		}
+
+		.content{
+			@include span-columns(9);
+		}
+
+		> header h1{
+			font-size: 2em;
+			margin-top: 1em;
+		}
+
+		ul, ol{
+
+			&.nobullets{
+				
+				margin-left: 0;
+				padding-left: 0;
+
+				> li{
+					list-style-type: none;
+					margin-left: 0;
+					padding-left: 0;
+				}
+			}
+		}
+
+		ul, ol{
+
+			> li{
+				list-style-type: disc;
+				margin-left: 2em;
+				margin-bottom: 0.5em;
+
+				&::first-letter{
+					text-transform: capitalize;
+				}
+			}
+		}
+
+		ol{
+
+			> li{
+				list-style-type: decimal;
+			}
+		}
+
+		ul, ol{
+
+			li {
+
+				> ul, ol{
+					margin-top: 0.5em;
+				}
+			}
+		}
+
+		ul > li{
+
+			> ul > li{
+				list-style-type: circle;
+			}
+		}
+	}
+
+	@media print {
+		main{
+
+			@include outer-container(100%);
+
+			.sidebar{
+				display: none;
+			}
+
+			.content{
+				@include span-columns(12);
+			}
+		}
+
+		& > header, & > footer{
+			display: none;
+		}
+	}
+}

@@ -1,0 +1,354 @@
+.navigation {
+  $navigation-padding: $base-spacing !default;
+  $navigation-background: $saveup-blue !default;
+  $navigation-color: white !default;
+  $navigation-height: 5em !default;
+  $navigation-mobile-height: 4em !default;
+  $navigation-active-link-color: transparentize(white, 0.5) !default;
+  $horizontal-bar-mode: $large-screen !default;
+
+  // User Navigation Header
+  $user-nav-padding: $base-spacing;
+  $user-nav-icon-size: $base-icon-size * 1.5;
+
+  // Movile side 
+  $side-nav-width: 80%;
+  $side-nav-footer-height: 5em;
+
+  width: 100%;
+  z-index: 999;
+  height: $navigation-mobile-height;
+  text-align: center;
+  background-color: $navigation-background;
+
+// Handle Stick Nav
+
+  .navigation-stick &{
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 1000;
+  }
+
+  &-stick{
+    margin-top: $navigation-mobile-height;
+  }
+  
+// Mobile view
+
+  &-button {
+    top: 0;
+    left: 0;
+    color: $navigation-color;
+    height: 100%;
+    margin: 0;
+    position: absolute;
+    padding-left: $small-spacing;
+
+    svg{
+      @extend .icon;
+      width: $base-icon-size;
+      height: 100%;
+    }
+  }
+  
+
+// Handle nav toggle on movile view
+
+  #menu-toggle{
+
+    @extend %visuallyhidden;
+
+    &:checked{
+
+      & ~ label{
+
+        &:before{
+          @include size(100%);
+          content: " ";
+          position: fixed;
+          background: rgba(black, 0.5);
+        }
+      }
+
+      & ~ div.navigation-wrapper{
+
+        nav, .navigation-footer{
+          left: 0;
+        }
+      }
+    }
+  }
+
+// Sub nav links
+
+  &-wrapper {
+    @include clearfix;
+    @include outer-container;
+    z-index: 9999;
+  }
+
+  &-logo {
+    display: block;
+    height: 100%;
+
+    img {
+      height: 100%;
+      padding: 0.45em;
+    }
+  }
+  
+// Nav menu
+
+  &-links {
+    top: 0;
+    left: -$side-nav-width;
+    width: $side-nav-width;
+    height: 100%;
+    z-index: 10;
+    display: inline-block;
+    overflow: auto;
+    position: fixed;
+    font-size: 0.9em;
+    text-align: left;
+    min-height: $navigation-height;
+    transition: all $base-duration $base-timing;
+    padding-bottom: $side-nav-footer-height;
+    background-color: lighten($saveup-blue, 5%);
+
+
+    ul{
+      margin-top: $base-spacing;
+    }
+
+    li {
+      border-bottom: 1px solid lighten($saveup-blue, 7%);
+    }
+  }
+
+  .user{
+
+    display: block;
+    padding: $user-nav-padding $user-nav-padding;
+    position: relative;
+    text-align: left;
+    background-color: darken($saveup-blue, 3%);
+    margin-bottom: -$base-spacing;
+
+    > * {
+      vertical-align: middle;
+    }
+
+    &-icon{
+      display: inline-block;
+      svg{
+        @extend .icon;
+        @include size($user-nav-icon-size);
+      }
+    }
+
+    &-data{
+      display: inline-block;
+      padding-left: $small-spacing;
+    }
+
+    &-edit{
+      @extend .icon;
+      left: 100%;
+      position: absolute;
+      margin-left: - ($small-spacing + $small-icon-size);
+    }
+
+    &-name{
+      @extend %truncate;
+      color: white;
+      margin: 0;
+    }
+
+    &-level{
+      color: white;
+      span{
+        font-weight: bold;
+      }
+    }
+  }
+
+  &-footer{
+
+    @include transform(translateY(-100%));
+    top: 100%;
+    left: - $side-nav-width;
+    width: $side-nav-width;
+    height: $side-nav-footer-height;
+    padding: $small-spacing 0;
+    position: fixed;
+    background: lighten($saveup-blue, 7%);
+    text-align: center;
+    transition: inherit;
+
+    > * {
+      vertical-align: middle;
+    }
+
+    &-credits, &-plays{
+      width: 40%;
+      display: inline-block;
+      font-size: 1.5em; 
+      color: white;
+
+      &:after{
+        content: attr(title);
+        display: block;
+        text-transform: uppercase;
+        font-size: 0.6em;
+      }
+    }
+
+    &-exchange{
+      @extend .button-circle;
+      @extend .button-sm;
+      margin: 0;
+    }
+  }
+
+  &-link{
+
+    a{
+      color: white; 
+      padding: $base-spacing * 0.8;
+      display: block;
+      font-weight: bold;
+
+      &:hover, &:active{
+        background: lighten($saveup-blue, 7%);
+      }
+    }
+
+    .expand{
+      float: right;
+      margin-top: $base-spacing * 0.8;
+    }
+
+    svg{
+      @extend .icon;
+      margin-right: $small-spacing;
+      vertical-align: bottom;
+    }
+
+    .sub-nav{
+
+      height: 0;
+      overflow: hidden;
+      
+      ul{
+        margin: 0;
+
+        a{
+          padding-left: $base-spacing * 1.5;
+        }
+
+      }
+    }
+
+    &.open{
+
+      .expand{
+        @include transform(rotate(180deg));
+      }
+
+      .sub-nav{
+        height: auto;
+      }
+    }
+  }
+  
+// Elements on the far right
+
+  &-tools {
+    @include fill-parent;
+    > *{
+      display: block;
+      text-align: center;
+    }
+  }
+
+// Desktop Layout
+  @include media($horizontal-bar-mode) {
+
+    height: $navigation-height;
+
+    &-stick{
+      margin-top: $navigation-height;
+    }
+
+    &-button, &-footer{
+      display: none;
+    }
+
+    &-logo{
+      top: 0;
+      left: 0;
+      position: absolute;
+      padding-left: $navigation-padding;
+    }
+
+    .user{
+      display: none;
+    }
+
+    &-links {
+      width: auto;
+      display: block;
+      padding: 0;
+      position: static;
+      background: transparent;
+      font-size: 1em;
+      line-height: $navigation-height;
+
+      ul {
+        margin-top: 0;
+        text-align: center;
+        li {
+          display: inline-block;
+          border: none;
+          a {
+            padding: 0 $small-spacing;
+          }
+          svg {
+            display: none;
+          }
+        }
+        li:last-child {
+          display: none;
+        }
+      }
+
+      .open{
+        .sub-nav{
+          height: 0;
+        }
+      }
+      
+      .sub-nav{
+        position: absolute;
+        overflow: hidden;
+      }
+    }
+
+    &-tools {
+      @include transform(translateX(-100%));
+      top: 0;
+      left: 100%;
+      width: auto;
+      position: absolute;
+      padding-right: $base-spacing;
+      white-space: nowrap;
+
+      & > * {
+        display: inline-block;
+        font-size: 1.2em;
+        padding: $small-spacing / 2 $small-spacing * 1.2;
+      }
+    }
+  }
+}

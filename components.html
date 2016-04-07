@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bourbon</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="/bower_components/highlightjs/styles/default.css">
+  <script src="/bower_components/highlightjs/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+</head>
+<body class="style-guide navigation-stick">
+  <header class="navigation" role="banner">
+    <a class="navigation-logo">
+      <img src="/img/sitelogo-original.svg" alt="Logo Image">
+    </a>
+    <input type="checkbox" id="menu-toggle" value="">
+    <label for="menu-toggle" class="navigation-button" id="js-mobile-menu">
+      <svg class="tabicon-icon" viewBox="0 0 48 48">
+        <use xlink:href="img/sprite.svg#icon-menu">
+      </svg>
+    </label>
+    <div class="navigation-wrapper">
+      <nav class="navigation-links" role="navigation">
+        <div class="user">
+          <svg class="user-edit" viewBox="0 0 48 48">
+            <use xlink:href="img/sprite.svg#icon-edit">
+          </svg>
+          <div class="user-icon">
+            <svg viewBox="0 0 48 48">
+              <use xlink:href="img/sprite.svg#icon-account-circle">
+            </svg>
+          </div>
+          <h3 class="user-text">Gustavo Laguna</h3>
+          <span class="user-level">Level <span>2</span></span>
+        </div>
+        <ul>
+          <li class="navigation-link"><a>How It Works</a></li>
+          <li class="navigation-link">
+            <a>Account</a>
+            <div class="sub-nav">
+              <ul>
+                <li>
+                  <a>
+                    <svg class="tabicon-icon" viewBox="0 0 48 48">
+                      <use xlink:href="img/sprite.svg#icon-account-wallet">
+                    </svg>
+                    Spending
+                  </a>
+                </li>
+                <li>
+                  <a>
+                    <svg class="tabicon-icon" viewBox="0 0 48 48">
+                      <use xlink:href="img/sprite.svg#icon-account-balance">
+                    </svg>
+                    Savings
+                  </a>
+                </li>
+                <li>
+                  <a>
+                    <svg class="tabicon-icon" viewBox="0 0 48 48">
+                      <use xlink:href="img/sprite.svg#icon-trending-down">
+                    </svg>
+                    Debt
+                  </a>
+                </li>
+                <li class="footer-link">
+                  <a>
+                    View all accounts in one place
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="navigation-link"><a>Blog</a></li>
+        </ul>
+        <div class="navigation-footer">
+          <span title="credits" class="navigation-footer-credits">
+            15,000
+          </span><svg class="navigation-footer-exchange" viewBox="0 0 48 48">
+            <use xlink:href="img/sprite.svg#icon-swap">
+          </svg><span title="plays" class="navigation-footer-plays">
+            6
+          </span>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section id="style-guide-components" class="components">
+      <article class="component">
+        <h1>Typography</h1>
+        <article class="component-type">
+          <h1>Header</h1>
+          <p>The header size can be change using the variable <code>$header-base-font-size</code> to indicate the size of the <code>.h1</code> class, and <code>$header-base-font-size-decrease</code> indicates how much the size must be decreased for the rest of the classes.</p>
+          <div class="example">
+            <div class="example-result">
+              <h1 class="h1">Header Example H1</h1>
+              <h2 class="h2">Header Example H2</h2>
+              <h3 class="h3">Header Example H3</h3>
+              <h4 class="h4">Header Example H4</h4>
+              <h5 class="h5">Header Example H5</h5>
+              <h6 class="h6">Header Example H6</h6>
+            </div>
+            <pre>
+              <code>
+&lt;h1 class=&quot;h1&quot;&gt;Header Example H1&lt;/h1&gt;
+&lt;h2 class=&quot;h2&quot;&gt;Header Example H2&lt;/h2&gt;
+&lt;h3 class=&quot;h3&quot;&gt;Header Example H3&lt;/h3&gt;
+&lt;h4 class=&quot;h4&quot;&gt;Header Example H4&lt;/h4&gt;
+&lt;h5 class=&quot;h5&quot;&gt;Header Example H5&lt;/h5&gt;
+&lt;h6 class=&quot;h6&quot;&gt;Header Example H6&lt;/h6&gt;
+              </code>
+            </pre>
+          </div>
+        </article>
+        <article class="component-type">
+          <h1>Paragraph</h1>
+          <div class="example">
+            <div class="example-result">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+          </div>
+        </article>
+        <article class="component-type">
+          <h1>Links</h1>
+          <div class="example">
+            <div class="example-result">
+              <a href="" title="">Link</a>
+            </div>
+          </div>
+        </article>
+        <article class="component-type">
+          <h1>Unordered List</h1>
+          <p>By default unordered lists don't have margin or bullets, given that they are use in nav elements and other components that doesn't requires this default behavior.</p>
+          <div class="example">
+            <div class="example-result">
+              <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>
+                  Item 3
+                  <ul>
+                    <li>Item 1</li>
+                    <li>Item 2</li>
+                    <li>Item 3</li>
+                    <li>Item 4</li>
+                    <li>Item 5</li>
+                  </ul>
+                </li>
+                <li>Item 4</li>
+                <li>Item 5</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+        <article class="component-type">
+          <h1>Ordered List</h1>
+          <div class="example">
+            <div class="example-result">
+              <ol>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+                <li>Item 4</li>
+                <li>Item 5</li>
+              </ol>
+            </div>
+          </div>
+        </article>
+      </article>
+      <article class="component">
+        <h1>Media</h1>
+        <article class="component-type">
+          <h1>Image</h1>
+          <p>Image by default will grow to there maximum size, or fill the parent container.</p>
+          <div class="example">
+            <div class="example-result">
+              <img src="img/dotcom/applebee.jpg" height="367" width="652" alt="">
+              <img src="img/dotcom/dotcom_landing_main_banner.jpg" height="551" width="2000" alt="">
+            </div>
+            <pre>
+              <code>
+&lt;img src=&quot;img/dotcom/applebee.jpg&quot; height=&quot;367&quot; width=&quot;652&quot; alt=&quot;&quot;&gt;
+&lt;img src=&quot;img/dotcom/dotcom_landing_main_banner.jpg&quot; height=&quot;551&quot; width=&quot;2000&quot; alt=&quot;&quot;&gt;
+              </code>
+            </pre>
+          </div>
+        </article>
+        <article class="component-type">
+          <h1>Responsive Image</h1>
+          <p>This is intended to be use when the <code>&lt;img&gt;</code> tag is used, on image added with css media queries should be used.</p>
+          <p class="note">Only current browsers support this markup for responsive images, on older browser  <a href="http://scottjehl.github.io/picturefill/" title="PictureFill">PictureFill</a> polyfill must be used.</p>
+          <div class="example">
+            <div class="example-result">
+              <picture>
+                <source srcset="http://placehold.it/1500x500" media="(min-width: 1000px)">
+                <source srcset="http://placehold.it/900x300" media="(min-width: 800px)">
+                <img srcset="http://placehold.it/500x150" alt="…">
+              </picture>
+            </div>
+            <pre>
+              <code>
+&lt;picture&gt;
+  &lt;source srcset=&quot;http://placehold.it/1500x500&quot; media=&quot;(min-width: 1000px)&quot;&gt;
+  &lt;source srcset=&quot;http://placehold.it/900x300&quot; media=&quot;(min-width: 800px)&quot;&gt;
+  &lt;img srcset=&quot;http://placehold.it/500x150&quot; alt=&quot;&hellip;&quot;&gt;
+&lt;/picture&gt;
+              </code>
+            </pre>
+          </div>
+        </article>
+        <article class="component-type">
+          <h1>SVG Image</h1>
+          <p class="note">SVG images will always fill the parent container.</p>
+          <div class="example">
+            <div class="example-result">
+              <img src="img/logos/applebees.svg" height="367" width="652" alt="">
+            </div>
+          </div>
+        </article>
+        <article class="component-type">
+          <h1>Cloudinary</h1>
+          <p>The image original size was 1427x1142 and weighed 875.6 KB, tree different sizes are created on the fly, 1200px (598 KB), 900px (347 KB) and 500px (116 KB).</p>
+          <div class="example">
+            <picture>
+              <source 
+                media="(min-width: 1000px)"
+                srcset="http://res.cloudinary.com/saveup/image/upload/c_scale,w_1200/l_text:Roboto_60:1200w,co_rgb:3D3D3D/v1456173401/dotcom_landing_security_ipad_fy0v1d.png 1200w"
+                sizes="100vw" />
+              <source 
+                media="(min-width: 600px)"
+                srcset="http://res.cloudinary.com/saveup/image/upload/c_scale,w_900/l_text:Roboto_60:900w,co_rgb:3D3D3D/v1456173401/dotcom_landing_security_ipad_fy0v1d.png 900w"
+                sizes="100vw" />
+              <img
+                srcset="http://res.cloudinary.com/saveup/image/upload/c_scale,w_500/l_text:Roboto_60:500w,co_rgb:3D3D3D/v1456173401/dotcom_landing_security_ipad_fy0v1d.png 500w"
+                src="http://res.cloudinary.com/saveup/image/upload/c_scale,w_500/ l_text:Roboto_60:500w,co_rgb:3D3D3D/v1456173401/dotcom_landing_security_ipad_fy0v1d.png"
+                alt="Saveup App Tablet"
+                sizes="100vw" />
+            </picture>
+          </div>
+          <pre>
+            <code>
+&lt;picture&gt;
+  &lt;source 
+    media=&quot;(min-width: 1000px)&quot;
+    srcset=&quot;http://res.cloudinary.com/saveup/image/upload/c_scale,w_1200/l_text:Roboto_60:1200w,co_rgb:3D3D3D/v1456173401/dotcom_landing_security_ipad_fy0v1d.png 1200w&quot;
+    sizes=&quot;100vw&quot; /&gt;
+  &lt;source 
+    media=&quot;(min-width: 600px)&quot;
+    srcset=&quot;http://res.cloudinary.com/saveup/image/upload/c_scale,w_900/l_text:Roboto_60:900w,co_rgb:3D3D3D/v1456173401/dotcom_landing_security_ipad_fy0v1d.png 900w&quot;
+    sizes=&quot;100vw&quot; /&gt;
+  &lt;img
+    srcset=&quot;http://res.cloudinary.com/saveup/image/upload/c_scale,w_500/l_text:Roboto_60:500w,co_rgb:3D3D3D/v1456173401/dotcom_landing_security_ipad_fy0v1d.png 500w&quot;
+    src=&quot;http://res.cloudinary.com/saveup/image/upload/c_scale,w_500/ l_text:Roboto_60:500w,co_rgb:3D3D3D/v1456173401/dotcom_landing_security_ipad_fy0v1d.png&quot;
+    alt=&quot;Saveup App Tablet&quot;
+    sizes=&quot;100vw&quot; /&gt;
+&lt;/picture&gt;
+            </code>
+          </pre>
+        </article>
+      </article>
+      <article class="component">
+        <h1>Form</h1>
+        <p>The form components of the project loosely follow the material design guideline.</p>
+        <article class="component-type">
+          <h1>Basic Input</h1>
+          <div class="example">
+            <div class="example-result">
+              <div class="input-container">
+                <input type="text" id="sinple-input">
+                <label for="sinple-input">Input</label>
+              </div>
+              <div class="input-container">
+                <input type="password" id="sinple-input">
+                <label for="sinple-input">Password</label>
+              </div>
+            </div>
+            <pre>
+              <code>
+&lt;div class=&quot;input-container&quot;&gt;
+  &lt;input type=&quot;text&quot; id=&quot;sinple-input&quot;&gt;
+  &lt;label for=&quot;sinple-input&quot;&gt;Input&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class=&quot;input-container&quot;&gt;
+  &lt;input type=&quot;password&quot; id=&quot;sinple-input&quot;&gt;
+  &lt;label for=&quot;sinple-input&quot;&gt;Password&lt;/label&gt;
+&lt;/div&gt;
+              </code>
+            </pre>
+          </div>
+        </article>
+        <article class="component-type">
+          <h1>Input variations</h1>
+          <p>The input component has different helper classes and variations, that makes it a versatile component for different proposes, a placeholder can be use instead of the label, or they can be use at the same time to hint an example.</p>
+          <div class="example">
+            <div class="example-result">
+              <div class="input-container">
+                <input placeholder="Placeholder" type="text">
+              </div>
+              <div class="input-container">
+                <input placeholder="E.g. Gustavo Laguna" type="text" id="placeholer-input">
+                <label for="placeholer-input">Name</label>
+              </div>
+              <div class="input-container">
+                <svg class="icon" viewBox="0 0 48 48">
+                  <use xlink:href="img/sprite.svg#icon-search"></use>
+                </svg>
+                <input type="text" id="search-input">
+                <label for="search-input">Search</label>
+              </div>
+            </div>
+            <pre>
+              <code>
+&lt;div class=&quot;input-container&quot;&gt;
+  &lt;input placeholder=&quot;Placeholder&quot; type=&quot;text&quot;&gt;
+&lt;/div&gt;
+&lt;div class=&quot;input-container&quot;&gt;
+  &lt;input placeholder=&quot;E.g. Gustavo Laguna&quot; type=&quot;text&quot; id=&quot;placeholer-input&quot;&gt;
+  &lt;label for=&quot;placeholer-input&quot;&gt;Name&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class=&quot;input-container&quot;&gt;
+  &lt;svg class=&quot;icon&quot; viewBox=&quot;0 0 48 48&quot;&gt;
+    &lt;use xlink:href=&quot;img/sprite.svg#icon-search&quot;&gt;&lt;/use&gt;
+  &lt;/svg&gt;
+  &lt;input type=&quot;text&quot; id=&quot;search-input&quot;&gt;
+  &lt;label for=&quot;search-input&quot;&gt;Search&lt;/label&gt;
+&lt;/div&gt;
+              </code>
+            </pre>
+          </div>
+        </article>
+        <article class="component-type">
+          <h1>Basic Checkbox</h1>
+          <div class="example">
+            <div class="example-result">
+              <div class="input-container">
+                <input type="checkbox" id="checkbox-one" />
+                <label for="checkbox-one">Dining</label>
+              </div>
+            </div>
+          </div>
+          <pre>
+            <code>
+&lt;div class=&quot;input-container&quot;&gt;
+  &lt;input type=&quot;checkbox&quot; id=&quot;checkbox-one&quot; /&gt;
+  &lt;label for=&quot;checkbox-one&quot;&gt;Dining&lt;/label&gt;
+&lt;/div&gt;
+            </code>
+          </pre>
+        </article>
+        <article class="component-type">
+          <h1>Basic Switch</h1>
+          <div class="example">
+            <div class="example-result">
+              <div class="input-container">
+                <label class="switch">
+                  off
+                  <input type="checkbox">
+                  <span class="switch-lever"></span>
+                  on
+                </label>
+              </div>
+            </div>
+            <pre>
+              <code>
+&lt;div class=&quot;input-container&quot;&gt;
+  &lt;label class=&quot;switch&quot;&gt;
+    off
+    &lt;input type=&quot;checkbox&quot;&gt;
+    &lt;span class=&quot;switch-lever&quot;&gt;&lt;/span&gt;
+    on
+  &lt;/label&gt;
+&lt;/div&gt;
+              </code>
+            </pre>
+          </div>
+        </article>
+        <article class="component-type">
+          <h1>Basic Radio Button</h1>
+          <div class="example">
+            <div class="example-result">
+              <div class="input-container">
+                <input id="option-one" name="example" type="radio">
+                <label for="option-one">
+                  Option One - Normal
+                </label>
+                <input class="radio-gap" id="option-two" name="example" type="radio">
+                <label for="option-two">
+                  Option Two - Gap
+                </label>
+              </div>
+            </div>
+            <pre>
+              <code>
+&lt;div class=&quot;input-container&quot;&gt;
+  &lt;input id=&quot;option-one&quot; name=&quot;example&quot; type=&quot;radio&quot;&gt;
+  &lt;label for=&quot;option-one&quot;&gt;
+    Option One - Normal
+  &lt;/label&gt;
+  &lt;input class=&quot;radio-gap&quot; id=&quot;option-two&quot; name=&quot;example&quot; type=&quot;radio&quot;&gt;
+  &lt;label for=&quot;option-two&quot;&gt;
+    Option Two - Gap
+  &lt;/label&gt;
+&lt;/div&gt;
+              </code>
+            </pre>
+          </div>
+        </article>
+      </article>
+      <article class="component">
+        <h1>React Components</h1>
+        <article class="component-type">
+          <h1>Simple Input</h1>
+          <div class="example">
+            <div id="input-react" class="example-result">
+            </div>
+          </div>
+          <pre>
+            <code>
+ReactDOM.render(
+  &lt;Input type=&#039;text&#039; id=&#039;input&#039; label=&#039;Input&#039;/&gt;,
+  document.getElementById(&#039;input-react&#039;)
+);
+            </code>
+          </pre>
+        </article>
+        <article class="component-type">
+          <h1>Required Input</h1>
+          <div class="example">
+            <div id="input-react-required" class="example-result">
+            </div>
+          </div>
+          <pre>
+            <code>
+ReactDOM.render(
+  &lt;Input required type=&#039;text&#039; id=&#039;input&#039; label=&#039;Input&#039;/&gt;,
+  document.getElementById(&#039;input-react-required&#039;)
+);
+            </code>
+          </pre>
+        </article>
+        <article class="component-type">
+          <h1>Input With Maxlength</h1>
+          <div class="example">
+            <div id="input-react-maxlength" class="example-result">
+            </div>
+          </div>
+          <pre>
+            <code>
+ReactDOM.render(
+  &lt;Input maxlength=&quot;20&quot; type=&#039;text&#039; id=&#039;input&#039; label=&#039;Input&#039;/&gt;,
+  document.getElementById(&#039;input-react-maxlength&#039;)
+);
+            </code>
+          </pre>
+        </article>
+        <article class="component-type">
+          <h1>Singup Form</h1>
+          <div class="example">
+            <div class="example-result">
+              <section class="access">
+                <header class="access-header">
+                  <img src="img/sitelogo-original.svg" alt="">
+                  <h1>Create an Accout</h1>
+                </header>
+                <form class="access-form" action="" method="" accept-charset="utf-8">
+                  <div class="input-container">
+                    <input required type="text" id="access-name">
+                    <label for="access-name">Username</label>
+                  </div>
+                  <div class="input-container">
+                    <input required type="password" id="access-password">
+                    <label for="access-password">Password</label>
+                  </div>
+                  <div class="input-container">
+                    <input required type="password" id="access-password-repeat">
+                    <label for="access-password-repeat">Password Repeat</label>
+                  </div>
+                  <div class="access-checks">
+                    <div class="input-container">
+                      <input type="checkbox" id="access-resident" />
+                      <label for="access-resident">I am a United State resident.</label>
+                    </div>
+                  </div>
+                  <div class="access-checks">
+                    <div class="input-container">
+                      <input type="checkbox" id="access-terms" />
+                      <label for="access-terms">I accept ther Terms of Service.</label>
+                    </div>
+                  </div>
+                  <button class="button">Create Account</button>
+                </form>
+              </section>
+            </div>
+          </div>
+        </article>
+        <article class="component-type">
+          <h1>Login Form</h1>
+          <div class="example">
+            <div class="example-result">
+              <section class="access">
+                <header class="access-header">
+                  <img src="img/sitelogo-original.svg" alt="">
+                  <h1>Sign in to you Account</h1>
+                </header>
+                <form class="access-form" action="" method="" accept-charset="utf-8">
+                  <div class="input-container">
+                    <input required type="text" id="access-name">
+                    <label for="access-name">Username</label>
+                  </div>
+                  <div class="input-container">
+                    <input required type="password" id="access-password">
+                    <label for="access-password">Password</label>
+                  </div>
+                  <div class="access-checks">
+                    <div class="input-container">
+                      <input type="checkbox" id="access-remember" />
+                      <label for="access-remember">Keep me signed in.</label>
+                    </div>
+                  </div>
+                  <button class="button">Sign In</button>
+                </form>
+              </section>
+            </div>
+          </div>
+        </article>
+      </article>
+      <article class="component">
+        <h1>Colors</h1>
+        <article class="component-type">
+          <h1>Basic Colors</h1>
+          <div class="example color-example">
+            <div class="example-result">
+              <div class="color-tile color-pink">
+                
+              </div>
+              <div class="color-tile color-blue">
+                
+              </div>
+              <div class="color-tile color-dark-blue">
+                
+              </div>
+            </div>
+          </div>
+        </article>
+      </article>
+      <article class="component">
+        <h1>Tables</h1>
+        <article class="component-type">
+          <h1>Transaction Table</h1>
+          <div class="example">
+            <div class="example-result">
+              <table class="accounts-transactions-table">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Description</th>
+                    <th>Amount</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="spend">
+                    <td>Jan 12</td>
+                    <td>Royal</td>
+                    <td>120.00</td>
+                  </tr>
+                  <tr class="withdrawal">
+                    <td>Feb 12</td>
+                    <td>Transfer</td>
+                    <td>152.31</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <pre>
+              <code>
+&lt;table class=&quot;accounts-transactions-table&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Date&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+      &lt;th&gt;Amount&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr class=&quot;spend&quot;&gt;
+      &lt;td&gt;Jan 12&lt;/td&gt;
+      &lt;td&gt;Royal&lt;/td&gt;
+      &lt;td&gt;120.00&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr class=&quot;withdrawal&quot;&gt;
+      &lt;td&gt;Feb 12&lt;/td&gt;
+      &lt;td&gt;Transfer&lt;/td&gt;
+      &lt;td&gt;152.31&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+              </code>
+            </pre>
+          </div>
+        </article>
+      </article>
+      <article class="component">
+        <h1>Icons</h1>
+        <p>The icon of the project are contain inside an svg sprite, individual icons are inserted into the page using the <code>use</code> tag with the <code>xlink:href</code> attribute, which reference the file url and the id of the icon, this is desirable, given that is makes proper use of the browser cache. To add the default style to an svg tag, the class <code>.icon</code> needs to be added or extended.</p>
+        <article class="note">
+          <h1>Important</h1>
+          <p>The <code>xlink:href</code> attribute is not supported by IE 10, 9 and EDGE, but a polyfill is available to deal with this issue <a href="https://github.com/jonathantneal/svg4everybody" title="svg4everybody">svg4everybody</a>.</p>
+        </article>
+        <article class="component-type">
+          <h1>Basic Usage</h1>
+          <div class="example">
+            <div class="example-result">
+              <svg id="fansy-icon" viewBox="0 0 48 48" class="icon icon-ligth">
+                <use xlink:href="img/sprite.svg#icon-menu">
+              </svg>
+            </div>
+            <pre>
+              <code class="hljs">
+// scss
+#fansy-icon{
+  
+  @extend .icon;
+}
+
+// html
+&lt;svg id=&quot;fansy-icon&quot; viewBox=&quot;0 0 48 48&quot; class=&quot;icon icon-ligth&quot;&gt;
+  &lt;use xlink:href=&quot;img/sprite.svg#icon-menu&quot;&gt;
+&lt;/svg&gt;
+              </code>
+            </pre>
+          </div>
+        </article>
+        <article class="component-type">
+          <h1>Ligth / Dark</h1>
+          <div class="example example-half-dark">
+            <div class="example-result">
+              <svg viewBox="0 0 48 48" class="icon icon-ligth">
+                <use xlink:href="img/sprite.svg#icon-menu">
+              </svg>
+              <svg style="float: right;" viewBox="0 0 48 48" class="icon icon-dark">
+                <use xlink:href="img/sprite.svg#icon-menu">
+              </svg>
+            </div>
+            <pre>
+              <code>                
+&lt;svg viewBox=&quot;0 0 48 48&quot; class=&quot;icon icon-ligth&quot;&gt;
+  &lt;use xlink:href=&quot;img/sprite.svg#icon-menu&quot;&gt;
+&lt;/svg&gt;
+&lt;svg viewBox=&quot;0 0 48 48&quot; class=&quot;icon icon-dark&quot;&gt;
+  &lt;use xlink:href=&quot;img/sprite.svg#icon-menu&quot;&gt;
+&lt;/svg&gt;
+              </code>
+            </pre>
+          </div>
+        </article>
+        <article class="component-type">
+          <h1>Icons</h1>
+          <div id="icons"></div>
+        </article>
+      </article>
+      <article class="component">
+        <h1>Charts</h1>
+        <p>Charts componets, wrap arround React.</p>
+        <article class="component-type">
+          <h1>Donut Chart</h1>
+          <div class="example">
+            <div id="basic-doughnut" class="example-result"></div>
+          </div>
+          <pre>
+            <code>
+import Donut from './components/donut.jsx';
+
+var data = [
+  {
+      value: 300,
+      color:"#F7464A",
+      highlight: "#FF5A5E",
+      label: "Red"
+  },
+  {
+      value: 50,
+      color: "#46BFBD",
+      highlight: "#5AD3D1",
+      label: "Green"
+  },
+  {
+      value: 100,
+      color: "#FDB45C",
+      highlight: "#FFC870",
+      label: "Yellow"
+  }
+];
+
+ReactDOM.render(&lt;Donut data={data}/&gt;, document.getElementById('basic-doughnut'));
+            </code>
+          </pre>
+        </article>
+        <article class="component-type">
+          <h1>Line Chart</h1>
+          <div class="example">
+            <div id="basic-line" class="example-result"></div>
+          </div>
+          <pre>
+            <code>
+import LineChart from './components/line.jsx';
+
+var data = {
+    labels: ["January", "February", "March", "April", "May", "June", "July"],
+    datasets: [
+      {
+        label: "Name",
+        fillColor: "rgba(0, 0, 0, 0)",
+        pointColor: "rgb(21, 45, 60)",
+        strokeColor: "rgb(6, 119, 190)",
+        pointStrokeColor: "rgb(21, 45, 60)",
+        pointHighlightFill: "#fff",
+        pointHighlightStroke: "rgba(220,220,220,1)",
+        data: [10, 40, 45, 67, 80, 120, 130]
+      }
+    ]
+};
+
+ReactDOM.render(&lt;LineChart data={data}/&gt;, document.getElementById('basic-line'));
+            </code>
+          </pre>
+        </article>
+      </article>
+      <article class="component">
+        <h1>Card</h1>
+        <p>The card component creates a basic container base on some of the material design guidelines, this allows to have a basic building bock for all of the content.</p>
+        <article class="component-type">
+          <h1>Basic Usage</h1>
+          <div class="example">
+            <div class="example-result">
+              <span class="card card-z2 card-pad">
+                <span>Basic Card Example</span>
+              </span>
+            </div>
+            <pre>
+              <code class="hljs">
+&lt;span class=&quot;card card-z2 card-pad&quot;&gt;
+  &lt;span&gt;Basic Card Example&lt;/span&gt;
+&lt;/span&gt;
+              </code>
+            </pre>
+          </div>
+        </article>
+        <article class="component-type">
+          <h1>Basic Card - Rounded Corners</h1>
+          <div class="example">
+            <div class="example-result">
+              <span class="card card-z99 card-pad">
+                <span>Basic Card - Rounded Corners</span>
+              </span>
+              <span class="card card-z100 card-pad">
+                <span>Basic Card - Rounded Corners Elevated</span>
+              </span>
+            </div>
+            <pre>
+              <code class="hljs">
+&lt;span class=&quot;card card-z99 card-pad&quot;&gt;
+  &lt;span&gt;Basic Card - Rounded Corners&lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;card card-z100 card-pad&quot;&gt;
+  &lt;span&gt;Basic Card - Rounded Corners&lt;/span&gt;
+&lt;/span&gt;
+              </code>
+            </pre>
+          </div>
+        </article>
+        <article class="component-type">
+          <h1>Elevation</h1>
+          <p>The illusion of elevation can be achieved by adding a <code>.card-zN</code> class, depending on the elevation.</p>
+          <div class="example elevation-example">
+            <div class="example-result">
+              <span class="card card-z1 card-pad">
+                <span>Card Z1</span>
+              </span>
+              <span class="card card-z2 card-pad">
+                <span>Card Z2</span>
+              </span>
+              <span class="card card-z3 card-pad">
+                <span>Card Z3</span>
+              </span>
+              <span class="card card-z4 card-pad">
+                <span>Card Z4</span>
+              </span>
+              <span class="card card-z5 card-pad">
+                <span>Card Z5</span>
+              </span>
+              <span class="card card-z6 card-pad">
+                <span>Card Z6</span>
+              </span>
+              <span class="card card-z7 card-pad">
+                <span>Card Z7</span>
+              </span>
+              <span class="card card-z8 card-pad">
+                <span>Card Z8</span>
+              </span>
+              <span class="card card-z9 card-pad">
+                <span>Card Z9</span>
+              </span>
+              <span class="card card-z10 card-pad">
+                <span>Card Z10</span>
+              </span>
+            </div>
+            <pre>
+              <code class="hljs">
+&lt;span class=&quot;card card-z2 card-pad&quot;&gt;
+  &lt;span&gt;Basic Card Example&lt;/span&gt;
+&lt;/span&gt;
+              </code>
+            </pre>
+          </div>
+        </article>
+      </article>
+      <article class="component">
+        <h1>Tooltip (Pure CSS)</h1>
+        <p>This tooltip is design for a fast response, and functionality without any JS components, is intended to be use on the landing page.</p>
+        <article class="component-type">
+          <h1>Basic Usage</h1>
+          <div class="example tooltip-example">
+            <div class="example-result">
+              <span class="card card-pad">
+                <span>Basic Card Example</span>
+                <div class="tooltip">
+                  <blockquote>
+                    This is a tooltip
+                  </blockquote>
+                </div>
+              </span>
+            </div>
+            <pre>
+              <code class="hljs">
+&lt;span class=&quot;card card-pad&quot;&gt;
+  &lt;span&gt;Basic Card Example&lt;/span&gt;
+  &lt;div class=&quot;tooltip&quot;&gt;
+    &lt;blockquote&gt;
+      This is a tooltip
+    &lt;/blockquote&gt;
+  &lt;/div&gt;
+&lt;/span&gt;
+
+&lt;!-- SCSS --&gt;
+
+.card{
+
+  @extend %tooltip;
+}
+              </code>
+            </pre>
+          </div>
+        </article>
+      </article>
+      <article class="component">
+        <h1>Button</h1>
+        <article class="component-type">
+          <h1>Basic Usage</h1>
+          <p>Theres a whireframe variation of the button, one with white borders and text, and other with dark borders and text, to adapt to different background colors.</p>
+          <div class="example">
+            <div class="example-result">
+              <a href="" class="button">Link</a>
+              <button class="button">Button</button>
+              <input class="button" type="submit" name="" value="Input">
+            </div>
+            <pre>
+              <code class="hljs">
+&lt;a href=&quot;&quot; class=&quot;button&quot;&gt;Link&lt;/a&gt;
+&lt;button class=&quot;button&quot;&gt;Button&lt;/button&gt;
+&lt;input class=&quot;button&quot; type=&quot;submit&quot; name=&quot;&quot; value=&quot;Input&quot;&gt;
+              </code>
+            </pre>
+          </div>
+        </article>
+        <article class="component-type">
+          <h1>Wireframe Usage</h1>
+          <div id="wireframe-button" class="example example-half-dark">
+            <div class="example-result">
+              <button class="button-wireframe-ligth">Wireframe Button Ligth</button>
+              <button class="button-wireframe">Wireframe Button</button>
+            </div>
+            <pre>
+              <code class="hljs">
+&lt;button class=&quot;button-wireframe-ligth&quot;&gt;Wireframe Button Ligth&lt;/button&gt;
+&lt;button class=&quot;button-wireframe&quot;&gt;Wireframe Button&lt;/button&gt;
+              </code>
+            </pre>
+          </div>
+        </article>
+        <article class="component-type">
+          <h1>Icon Button</h1>
+          <div class="example">
+            <div class="example-result">
+              <button class="button">
+                <svg class="tabicon-icon" viewBox="0 0 48 48">
+                  <use xlink:href="img/sprite.svg#icon-menu">
+                </svg>
+                Button
+              </button>
+              <button class="button-wireframe-ligth">
+                <svg class="tabicon-icon" viewBox="0 0 48 48">
+                  <use xlink:href="img/sprite.svg#icon-menu">
+                </svg>
+                Button
+              </button>
+            </div>
+            <pre>
+              <code class="hljs">
+&lt;button class=&quot;button&quot;&gt;
+  &lt;svg viewBox=&quot;0 0 48 48&quot;&gt;
+    &lt;use xlink:href=&quot;img/sprite.svg#icon-menu&quot;&gt;
+  &lt;/svg&gt;
+  Button
+&lt;/button&gt;
+&lt;button class=&quot;button-wireframe-ligth&quot;&gt;
+  &lt;svg viewBox=&quot;0 0 48 48&quot;&gt;
+    &lt;use xlink:href=&quot;img/sprite.svg#icon-menu&quot;&gt;
+  &lt;/svg&gt;
+  Button
+&lt;/button&gt;
+              </code>
+            </pre>
+          </div>
+        </article>
+        <article class="component-type">
+          <h1>Button Size</h1>
+          <p>The size of the button can be change using classes to increase or reduce the size of the element, using: 
+          <pre class="inline-code">
+            <code class="css">.button-sm, .button-lg, .button-xl</code>
+          </pre></p>
+          <div class="example">
+            <div class="example-result example-center">
+              <button class="button button-sm">Button</button>
+              <button class="button">Button</button>
+              <button class="button button-lg">Button</button>
+              <button class="button button-xl">Button</button>
+              <br>
+              <button class="button-wireframe-ligth button-sm">Button</button>
+              <button class="button-wireframe-ligth">Button</button>
+              <button class="button-wireframe-ligth button-lg">Button</button>
+              <button class="button-wireframe-ligth button-xl">Button</button>
+            </div>
+            <pre>
+              <code class="hljs">
+&lt;button class=&quot;button button-sm&quot;&gt;Button&lt;/button&gt;
+&lt;button class=&quot;button&quot;&gt;Button&lt;/button&gt;
+&lt;button class=&quot;button button-lg&quot;&gt;Button&lt;/button&gt;
+&lt;button class=&quot;button button-xl&quot;&gt;Button&lt;/button&gt;
+&lt;button class=&quot;button-wireframe-ligth button-sm&quot;&gt;Button&lt;/button&gt;
+&lt;button class=&quot;button-wireframe-ligth&quot;&gt;Button&lt;/button&gt;
+&lt;button class=&quot;button-wireframe-ligth button-lg&quot;&gt;Button&lt;/button&gt;
+&lt;button class=&quot;button-wireframe-ligth button-xl&quot;&gt;Button&lt;/button&gt;
+              </code>
+            </pre>
+          </div>
+        </article>
+        <article class="component-type">
+          <h1>Circular Button</h1>
+          <p>The circular button is user to indicate actions with icons only.</p>
+          <div class="example">
+            <div class="example-result">
+              <a href="" class="button-circle button-sm">
+                <svg class="tabicon-icon" viewBox="0 0 48 48">
+                  <use xlink:href="img/sprite.svg#icon-link">
+                </svg>
+              </a>
+              <a href="" class="button-circle">
+                <svg class="tabicon-icon" viewBox="0 0 48 48">
+                  <use xlink:href="img/sprite.svg#icon-search">
+                </svg>
+              </a>
+              <a href="" class="button-circle button-lg">
+                <svg class="tabicon-icon" viewBox="0 0 48 48">
+                  <use xlink:href="img/sprite.svg#icon-edit">
+                </svg>
+              </a>
+            </div>
+            <pre>
+              <code class="hljs">
+&lt;a href=&quot;&quot; class=&quot;button-circle button-sm&quot;&gt;
+  &lt;svg class=&quot;tabicon-icon&quot; viewBox=&quot;0 0 48 48&quot;&gt;
+    &lt;use xlink:href=&quot;img/sprite.svg#icon-link&quot;&gt;
+  &lt;/svg&gt;
+&lt;/a&gt;
+&lt;a href=&quot;&quot; class=&quot;button-circle&quot;&gt;
+  &lt;svg class=&quot;tabicon-icon&quot; viewBox=&quot;0 0 48 48&quot;&gt;
+    &lt;use xlink:href=&quot;img/sprite.svg#icon-search&quot;&gt;
+  &lt;/svg&gt;
+&lt;/a&gt;
+&lt;a href=&quot;&quot; class=&quot;button-circle button-lg&quot;&gt;
+  &lt;svg class=&quot;tabicon-icon&quot; viewBox=&quot;0 0 48 48&quot;&gt;
+    &lt;use xlink:href=&quot;img/sprite.svg#icon-edit&quot;&gt;
+  &lt;/svg&gt;
+&lt;/a&gt;
+              </code>
+            </pre>
+          </div>
+        </article>
+      </article>
+      <article class="component">
+        <h1>Tabicons</h1>
+        <article class="component-type">
+          <h1>Basic Usage</h1>
+          <div class="example">
+            <div class="example-result">
+              <ul class="tabicons tabicons-dark">
+                <li class="tabicon">
+                  <svg class="tabicon-icon" viewBox="0 0 48 48">
+                    <use xlink:href="img/sprite.svg#icon-link">
+                  </svg>
+                  <span class="tabicon-text">Link</span>
+                </li>
+                <li class="tabicon">
+                  <svg class="tabicon-icon" viewBox="0 0 48 48">
+                    <use xlink:href="img/sprite.svg#icon-link">
+                  </svg>
+                  <span class="tabicon-text">Link</span>
+                </li>
+                <li class="tabicon">
+                  <svg class="tabicon-icon" viewBox="0 0 48 48">
+                    <use xlink:href="img/sprite.svg#icon-link">
+                  </svg>
+                  <span class="tabicon-text">Link</span>
+                </li>
+              </ul>
+            </div>
+            <pre>
+              <code>
+&lt;ul class=&quot;tabicons tabicons-dark&quot;&gt;
+  &lt;li class=&quot;tabicon&quot;&gt;
+    &lt;svg class=&quot;tabicon-icon&quot; viewBox=&quot;0 0 48 48&quot;&gt;
+      &lt;use xlink:href=&quot;img/sprite.svg#icon-link&quot;&gt;
+    &lt;/svg&gt;
+    &lt;span class=&quot;tabicon-text&quot;&gt;Link&lt;/span&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+              </code>
+            </pre>
+          </div>
+        </article>
+        <article class="component-type">
+          <h1>Ligth Theme</h1>
+          <div class="example">
+            <div class="example-result">
+              <ul class="tabicons tabicons-ligth">
+                <li class="tabicon">
+                  <svg class="tabicon-icon" viewBox="0 0 48 48">
+                    <use xlink:href="img/sprite.svg#icon-link">
+                  </svg>
+                  <span class="tabicon-text">Link</span>
+                  <svg class="tabicon-arrow-down" viewBox="0 0 48 48">
+                    <use xlink:href="img/sprite.svg#icon-arrow-down">
+                  </svg>
+                </li>
+                <li class="tabicon">
+                  <svg class="tabicon-icon" viewBox="0 0 48 48">
+                    <use xlink:href="img/sprite.svg#icon-payment">
+                  </svg>
+                  <span class="tabicon-text">Earn</span>
+                  <svg class="tabicon-arrow-down" viewBox="0 0 48 48">
+                    <use xlink:href="img/sprite.svg#icon-arrow-down">
+                  </svg>
+                </li>
+                <li class="tabicon">
+                  <svg class="tabicon-icon" viewBox="0 0 48 48">
+                    <use xlink:href="img/sprite.svg#icon-save">
+                  </svg>
+                  <span class="tabicon-text">Save</span>
+                  <svg class="tabicon-arrow-down" viewBox="0 0 48 48">
+                    <use xlink:href="img/sprite.svg#icon-arrow-down">
+                  </svg>
+                </li>
+                <li class="tabicon">
+                  <svg class="tabicon-icon" viewBox="0 0 48 48">
+                    <use xlink:href="img/sprite.svg#icon-timeline">
+                  </svg>
+                  <span class="tabicon-text">Win</span>
+                  <svg class="tabicon-arrow-down" viewBox="0 0 48 48">
+                    <use xlink:href="img/sprite.svg#icon-arrow-down">
+                  </svg>
+                </li>
+              </ul>
+            </div>
+            <pre>
+              <code>
+&lt;ul class=&quot;tabicons tabicons-ligth&quot;&gt;
+  &lt;li class=&quot;tabicon&quot;&gt;
+    &lt;svg class=&quot;tabicon-icon&quot; viewBox=&quot;0 0 48 48&quot;&gt;
+      &lt;use xlink:href=&quot;img/sprite.svg#icon-link&quot;&gt;
+    &lt;/svg&gt;
+    &lt;span class=&quot;tabicon-text&quot;&gt;Link&lt;/span&gt;
+    &lt;svg class=&quot;tabicon-arrow-down&quot; viewBox=&quot;0 0 48 48&quot;&gt;
+      &lt;use xlink:href=&quot;img/sprite.svg#icon-arrow-down&quot;&gt;
+    &lt;/svg&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+              </code>
+            </pre>
+          </div>
+        </article>
+      </article>
+    </section>
+    <section id="style-guide-side-bar"></section>
+  </main>
+  <footer class="footer" role="contentinfo">
+    <h1>Download Our Free Movile App</h1>
+    <div class="footer-toolbar">
+      <a href="" title="App Store" class="button-wireframe">App Store</a>
+      <a href="" title="Google Play" class="button-wireframe">Google Play</a>
+    </div>
+    <hr>
+    <div class="footer-links">
+      <ul>
+        <li><h3>Content</h3></li>
+        <li><a>About</a></li>
+        <li><a>Contact</a></li>
+        <li><a>Products</a></li>
+      </ul>
+      <ul>
+        <li><h3>Follow Us</h3></li>
+        <li><a>Facebook</a></li>
+        <li><a>Twitter</a></li>
+        <li><a>YouTube</a></li>
+      </ul>
+      <ul>
+        <li><h3>Legal</h3></li>
+        <li><a>Terms and Conditions</a></li>
+        <li><a>Privacy Policy</a></li>
+      </ul>
+    </div>
+    <p>Disclaimer area lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, nostrum repudiandae saepe.</p>
+  </footer>
+  <script src="/bower_components/jquery/dist/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/bower_components/react/react.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/bower_components/react/react-dom.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/bower_components/Chart.js/Chart.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/bower_components/lodash/dist/lodash.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/main.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

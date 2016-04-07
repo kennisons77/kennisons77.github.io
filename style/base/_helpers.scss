@@ -1,0 +1,136 @@
+// When the text overflows and ellipsis is added on the end
+%truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.middle{
+  @include transform(translate(-50%, -50%));
+  top: 50%;
+  left: 50%;
+  position: absolute;
+}
+
+.aspect-1{
+
+  &:before{
+    content: '';
+    display: block;
+    padding-top: 100%;
+  }
+}
+
+.icon {
+  @include size($small-icon-size);
+  fill: white;
+  vertical-align: middle;
+
+  &-lg{
+    font-size: 1.5em;
+  }
+
+  &-sm{
+    font-size: 1.5em;
+  }
+
+  &-ligth{
+    fill: $dark-grey-font-color;
+  }
+}
+
+%tooltip {
+
+	position: relative;
+
+	.tooltip{
+		@include transform(translate(-50%, -100%));
+		@extend .card-z3;
+
+		top: 0;
+		left: 50%;
+		width: 100%;
+		padding: 0.5em;
+		display: none;
+		position: absolute;
+		font-size: 0.8em;
+		background: white;
+	}
+
+	&:hover{
+
+		.tooltip{
+			display: inline-block;
+			text-align: center;
+		}
+	}
+	
+  blockquote{
+  	padding: 0;
+  	margin: 0;
+
+  	&:before, &:after{
+  		content: '"'
+  	}
+  }
+}
+
+%visuallyhidden { 
+  position: absolute; 
+  overflow: hidden; 
+  clip: rect(0 0 0 0); 
+  height: 1px; width: 1px; 
+  margin: -1px; padding: 0; border: 0; 
+}
+
+hr.or{
+
+  position: relative;
+
+  &:before{
+    @include transform(translate(-50%, -50%));
+    top: 50%;
+    left: 50%;
+    color: $medium-gray;
+    content: "or";
+    padding: 0 $small-spacing;
+    display: block;
+    position: absolute;
+    background: white;
+  }
+}
+
+%valign { 
+  &:before{
+  	height: 100%;
+  	content: " ";
+  	display: inline-block;
+  	margin-left: -0.25em;
+  	vertical-align: middle;
+  }
+
+  > *{
+  	display: inline-block;
+  	vertical-align: middle;
+  }
+}
+
+@function flex-width($elem-rows, $total-rows: 12) {
+
+  @return percentage($elem-rows / $total-rows);
+}
+
+@mixin flex-columns($elem-rows, $total-rows: 12, $display: block) {
+
+  @if type_of($total-rows) == string {
+    $display: $total-rows;
+    $total-rows: 12;
+  }
+
+  width: flex-width($elem-rows, $total-rows);
+
+  @if $display == block {
+    float: left;
+  }
+  display: $display;
+}

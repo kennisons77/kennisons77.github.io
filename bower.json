@@ -1,0 +1,30 @@
+{
+  "name": "bourbon",
+  "description": "Saveup Bourbon",
+  "main": "index.js",
+  "authors": [
+    "Gustavo Laguna <gustavo.gelf@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/saveup/front-end-redesign",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "highlightjs": "~9.1.0",
+    "jquery": "~2.2.0",
+    "react": "~0.14.7",
+    "lodash": "~4.2.1",
+    "Chart.js": "~1.0.2",
+    "svg4everybody": "~2.0.3",
+    "flux": "~2.1.1",
+    "eventemitter2": "~1.0.0",
+    "gsap": "^1.18.2"
+  }
+}
